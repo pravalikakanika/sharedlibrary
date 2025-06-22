@@ -32,13 +32,13 @@ def runSonarScanner(
 }
 
 def notify(String status, String slackChannel, String emailRecipients, String sonarReportUrl) {
-    def colors = [
-        SUCCESS: 'good',
-        FAILURE: 'danger'
-    ]
     def icons = [
         SUCCESS: ':large_green_circle:',
         FAILURE: ':red_circle:'
+    ]
+    def colors = [
+        SUCCESS: 'good',
+        FAILURE: 'danger'
     ]
     def subjects = [
         SUCCESS: "SUCCESS Jenkins Job '${env.JOB_NAME} [#${env.BUILD_NUMBER}]'",
